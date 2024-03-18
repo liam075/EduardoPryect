@@ -1,0 +1,60 @@
+{"Environment":"apny-edwdev.apny.hosted",
+    "DataSourceID":"101",
+    "DataSourceNM":"ClaimMVP",
+    "Bindings":[
+            {
+            "Name":"Medical",
+            "DataSource":"[MVP].[Claim].[MedicalClaims]",
+            "FieldsMapping":{
+                "ClaimID":"claimNBR",
+                "MemberID":"memberID",
+                "PaidAMT":"BilledAMT",
+                "LineNBR":"claimLineNBR",
+                "ServiceDTS":"FromDTS",
+                "FileDTS":"CAST('20' + SUBSTRING(FileNM, LEN(FileNM) - 9, 6) AS DATE)"
+                }
+            },
+            {
+            "Name":"Pharmacy",
+            "DataSource":"[MVP].[Claim].[Pharmacy]",
+            "FieldsMapping":{
+                "ClaimID":"TransactionNBR",
+                "MemberID":"memberID",
+                "PaidAMT":"PaidAMT",
+                "LineNBR":"CAST(0 AS INT)",
+                "ServiceDTS":"FillDTS",
+                "FileDTS":"CAST('20' + SUBSTRING(FileNM, LEN(FileNM) - 9, 6) AS DATE)"
+                }
+            },
+            {
+            "Name":"MemberEnrollment",
+            "DataSource":"[MVP].[Claim].[MemberEligibility]",
+            "FieldsMapping":{
+                "ClaimID":"",
+                "MemberID":"MemberID",
+                "EffectiveDTS":"EffectiveDTS",
+                "FileDTS":"CAST('20' + SUBSTRING(FileNM, LEN(FileNM) - 9, 6) AS DATE)"
+                }
+            },
+            {
+            "Name":"Member",
+            "DataSource":"[MVP].[Claim].[MemberAttribution]",
+            "FieldsMapping":{
+                "MemberID":"memberID",
+                "FirstNM":"memberFirstNM",
+                "LastNM":"memberLastNM",
+                "FullNM":"(MemberFirstNM + ' ' + MemberLastNM)",
+                "BirthDTS":"BirthDTS",
+                "GenderCD":"GenderCD"
+                }
+            },
+            {
+            "Name":"Contract",
+            "DataSource":""
+            },
+            {
+            "Name":"Transform",
+            "Query":"SELECT 1"
+            }
+        ]
+    }

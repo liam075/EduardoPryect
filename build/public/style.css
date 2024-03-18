@@ -1,0 +1,38 @@
+.CajaCompleta{
+    padding-top: 20px;
+    
+}
+.caja{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: solid 3px black;
+    border-radius: 20px;
+}
+.grupoboton{
+    padding-top: 20px;
+}
+.grupobotones{
+    padding-top: 20px;
+    display: flex;
+}
+.botndiv{
+    padding-right: 20px;
+}
+.Boton{
+    color: white;
+    width: 200px;
+    height: 40px;
+    border: 3px solid rgb(1, 48, 73);
+    background-color: rgb(20, 121, 209);
+    border-radius: 20px;
+    padding-left: 10px;
+}
+.configuracioncolor{
+    background-color: rgb(233, 233, 233);
+    border: 3px solid rgb(208, 208, 208);
+}
+
+.tituloproyecto{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
